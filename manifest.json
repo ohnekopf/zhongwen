@@ -1,10 +1,10 @@
 {
   "manifest_version": 2,
-  "name": "Zhongwen: Chinese-English Dictionary",
-  "short_name": "Zhongwen",
-  "version": "5.14.1",
-  "author": "Christian Schiller",
-  "homepage_url": "https://github.com/cschiller/zhongwen",
+  "name": "Huahua: Chinese-English Dictionary",
+  "short_name": "Huahua",
+  "version": "1.0",
+  "author": "Richard Nixon",
+  "homepage_url": "https://github.com/ohnekopf/zhongwen",
   "description": "Great tool for learning Chinese. Includes links to Chinese Grammar Wiki. Supports adding words to Skritter.",
   "icons": {
     "16": "images/zhongwen16.png",
@@ -13,7 +13,12 @@
   },
   "browser_action": {
     "default_icon": "images/zhongwen48.png",
-    "default_title": "Zhongwen Chinese Popup Dictionary"
+    "default_title": "Huahua Chinese Popup Dictionary"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "huahua@ohnekopf.com"
+    }
   },
   "background": {
     "page": "background.html"
@@ -40,11 +45,12 @@
   },
   "permissions": [
     "contextMenus",
+    "clipboardWrite",
     "tabs"
   ],
   "commands": {
     "_execute_browser_action": {
-      "description": "Enable/Disable Zhongwen"
+      "description": "Enable/Disable Huahua"
     }
   },
   "web_accessible_resources": [
