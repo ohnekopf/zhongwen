@@ -1177,8 +1177,10 @@ function makePicker() {
 	for (let result of auxSearchResults){
 		let style=`border: 1px solid gray !important; margin:auto; font-family:sans-serif ; background:#eeeeee;`;
 		let inp=`<input type="checkbox" id="pick${i}" ></inp>`;
-		html=html+inp+`${result[1]} ${result[2]} ${result[3]} <br>\n`;
-
+		html=html+inp+`<span class="w-hanzi-small">${result[0]}</span>&nbsp;`+
+			`<span class="w-hanzi-small">${result[1]}</span>&nbsp;`+
+			`<span class="w-pinyin-small">${result[2]}</span>&nbsp;`+
+			`<span class="w-def-small">${result[3]}</span><br>\n`;
 		i+=1;
 	}
 	showPopup(html, null, -1, -1);
