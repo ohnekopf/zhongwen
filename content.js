@@ -76,12 +76,18 @@ let altView = 0;
 
 let savedSearchResults = [];
 
+let auxSearchResults = [];
+
 let savedSelStartOffset = 0;
 
 let savedSelEndList = [];
 
 // regular expression for zero-width non-joiner U+200C &zwnj;
 let zwnj = /\u200c/g;
+
+
+// popup lock
+let popupLock = false;
 
 function enableTab() {
     document.addEventListener('mousemove', onMouseMove);
@@ -188,8 +194,15 @@ function onKeyDown(keyDown) {
             break;
         case 80: // 'p'
         {
-
-            showPopup('Testing!', null, -1, -1);
+			if (popupLock){
+				popupLock = false;
+				savePicks();
+			} 
+			else{
+				auxSearchResults=savedSearchResults;
+				makePicker();
+				popupLock = true;
+			}
         }
             break;
 
@@ -644,6 +657,7 @@ function getTextFromSingleNode(node, selEndList, maxLength) {
 }
 
 function showPopup(html, elem, x, y, looseWidth) {
+	if (popupLock) { return };
 
     if (!x || !y) {
         x = y = 0;
@@ -756,6 +770,7 @@ function showPopup(html, elem, x, y, looseWidth) {
 }
 
 function hidePopup() {
+	if (popupLock) { return };
     let popup = document.getElementById('zhongwen-window');
     if (popup) {
         popup.style.display = 'none';
@@ -1154,3 +1169,47 @@ chrome.runtime.onMessage.addListener(
         }
     }
 );
+
+
+function makePicker() {
+	let html="";
+	let i = 0;
+	for (let result of auxSearchResults){
+		let style=`border: 1px solid gray !important; margin:auto; font-family:sans-serif ; background:#eeeeee;`;
+		let inp=`<input type="checkbox" id="pick${i}" ></inp>`;
+		html=html+inp+`${result[1]} ${result[2]} ${result[3]} <br>\n`;
+
+		i+=1;
+	}
+	showPopup(html, null, -1, -1);
+}
+function savePicks(){
+	let inputs= document.querySelectorAll("#zhongwen-window input");
+	let entries = [];
+	let any = false;
+	
+	for ( let i = 0 ; i <auxSearchResults.length ; i++ ){
+		let entry = {
+			simplified: auxSearchResults[i][0],
+			traditional: auxSearchResults[i][1],
+			pinyin: auxSearchResults[i][2],
+			definition: auxSearchResults[i][3]
+		};
+		if (inputs[i].checked){
+			entries.push(entry);
+			any = true;
+		}
+	}
+
+	chrome.runtime.sendMessage({
+		'type': 'add',
+		'entries': entries
+	});
+	if (any){
+		showPopup('Some word were added to word list.<p>Press Alt+W to open word list.', null, -1, -1);
+	}
+	else{
+		showPopup('No words were added to word list.', null, -1, -1);
+	}
+
+}

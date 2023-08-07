@@ -57,7 +57,7 @@ let tabIDs = {};
 let dict;
 
 let zhongwenOptions = window.zhongwenOptions = {
-    css: localStorage['popupcolor'] || 'yellow',
+    css: localStorage['popupcolor'] || 'lightblue',
     tonecolors: localStorage['tonecolors'] || 'yes',
     fontSize: localStorage['fontSize'] || 'small',
     skritterTLD: localStorage['skritterTLD'] || 'com',
@@ -65,7 +65,7 @@ let zhongwenOptions = window.zhongwenOptions = {
     grammar: localStorage['grammar'] || 'yes',
     vocab: localStorage['vocab'] || 'yes',
     simpTrad: localStorage['simpTrad'] || 'classic',
-    toneColorScheme: localStorage['toneColorScheme'] || 'standard'
+    toneColorScheme: localStorage['toneColorScheme'] || 'hanping'
 };
 
 function activateExtension(tabId, showHelp) {
