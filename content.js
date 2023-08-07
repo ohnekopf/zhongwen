@@ -186,6 +186,12 @@ function onKeyDown(keyDown) {
                 }
             }
             break;
+        case 80: // 'p'
+        {
+
+            showPopup('Testing!', null, -1, -1);
+        }
+            break;
 
         case 82: // 'r'
         {
