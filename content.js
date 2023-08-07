@@ -114,6 +114,7 @@ function onKeyDown(keyDown) {
 
     if (keyDown.keyCode === 27) {
         // esc key pressed
+		popupLock = false; // just for sanity
         hidePopup();
         return;
     }
