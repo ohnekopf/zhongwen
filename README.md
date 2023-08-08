@@ -2,6 +2,11 @@
 
 This is my fork of the [Zhongwen](https://github.com/cschiller/zhongwen) browser extension!
 
+Now with cherrypicking! Hit <kbd>P</kbd> once to activate picking, press again to save the selected terms.
+
+![image](https://github.com/ohnekopf/zhongwen/assets/68486059/b1937472-6c23-4ed3-a61e-361d51a1b0a9)
+
+
 ## A Chinese Pop-Up Dictionary and Learning Tool
 
 This browser extension allows you to translate Chinese characters and words
