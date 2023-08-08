@@ -1127,6 +1127,7 @@ let miniHelp = `
     <tr><td><b>c&nbsp;:</b></td><td>&nbsp;Copy translation to clipboard</td></tr>
     <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
     <tr><td><b>r&nbsp;:</b></td><td>&nbsp;Remember word by adding it to the built-in word list</td></tr>
+    <tr><td><b>p&nbsp;:</b></td><td>&nbsp;Activate cherryPicking, press again to close popup.</td></tr>
     <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
     <tr><td><b>Alt w&nbsp;:</b></td><td>&nbsp;Show the built-in word list in a new tab</td></tr>
     <tr><td><b>&nbsp;</b></td><td>&nbsp;</td></tr>
