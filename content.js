@@ -1176,11 +1176,40 @@ function makePicker() {
 	let html="";
 	let i = 0;
 	for (let result of auxSearchResults){
+		
 		let style=`border: 1px solid gray !important; margin:auto; font-family:sans-serif ; background:#eeeeee;`;
 		let inp=`<input type="checkbox" id="pick${i}" ></inp>`;
-		html=html+inp+`<span class="w-hanzi-small">${result[0]}</span>&nbsp;`+
-			`<span class="w-hanzi-small">${result[1]}</span>&nbsp;`+
-			`<span class="w-pinyin-small">${result[2]}</span>&nbsp;`+
+
+		// detonify pinyin
+		let pinyin=result[2].split(" ");
+		let syllables="";
+
+		for (let syl of pinyin){
+			for (let tone in utones){
+				if (syl.search(utones[tone]) !== -1){
+					syl=syl.replace(utones[tone],"");
+					syl+=`${tone}`;
+					break;
+				}
+			}
+			syllables += " " + syl;
+		}
+		syllables=syllables.trim();
+
+		let pinyinClass = 'w-pinyin';
+		if (config.fontSize === 'small') {
+			pinyinClass += '-small';
+		}
+
+		let pinyinHtml=pinyinAndZhuyin(syllables, config.tonecolors !== 'no',pinyinClass)[0];
+
+		// build html
+		html=html+inp+`&nbsp;<span class="w-hanzi-small">${result[0]}</span>&nbsp;`;
+
+		if (result[0]!==result[1]){ // dont repeat if trad=simp
+			html+=`<span class="w-hanzi-small">${result[1]}</span>&nbsp;`;
+		}
+		html+=pinyinHtml+"<br>"+
 			`<span class="w-def-small">${result[3]}</span><br>\n`;
 		i+=1;
 	}
