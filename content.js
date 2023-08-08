@@ -760,7 +760,7 @@ function showPopup(html, elem, x, y, looseWidth) {
         popup.style.top = y + 'px';
         popup.style.display = '';
     }
-	//normalize popup pinyin 
+	// normalize popup pinyin
 
 	let pinyinClass = 'w-pinyin';
 	if (config.fontSize === 'small') {

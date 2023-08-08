@@ -7,12 +7,12 @@
   "homepage_url": "https://github.com/ohnekopf/zhongwen",
   "description": "Great tool for learning Chinese. Includes links to Chinese Grammar Wiki. Supports adding words to Skritter.",
   "icons": {
-    "16": "images/zhongwen16.png",
-    "48": "images/zhongwen48.png",
-    "128": "images/zhongwen.png"
+    "16": "images/huahua16.png",
+    "48": "images/huahua48.png",
+    "128": "images/huahua.png"
   },
   "browser_action": {
-    "default_icon": "images/zhongwen48.png",
+    "default_icon": "images/huahua48.png",
     "default_title": "Huahua Chinese Popup Dictionary"
   },
   "browser_specific_settings": {
