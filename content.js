@@ -607,14 +607,6 @@ function processSearchResult(result) {
 
     showPopup(makeHtml(result, config.tonecolors !== 'no'), savedTarget, popX, popY, false);
 
-	//normalize popup pinyin 
-
-	let pinyinClass = 'w-pinyin';
-	if (config.fontSize === 'small') {
-		pinyinClass += '-small';
-	}
-	let pyOutput=document.getElementsByClassName(pinyinClass) ;
-	for (let p of pyOutput){ p.innerHTML=p.innerHTML.normalize()} ;
 }
 
 // modifies selEndList as a side-effect
@@ -768,6 +760,14 @@ function showPopup(html, elem, x, y, looseWidth) {
         popup.style.top = y + 'px';
         popup.style.display = '';
     }
+	//normalize popup pinyin 
+
+	let pinyinClass = 'w-pinyin';
+	if (config.fontSize === 'small') {
+		pinyinClass += '-small';
+	}
+	let pyOutput=popup.querySelectorAll("."+pinyinClass);
+	for (let p of pyOutput){ p.innerHTML=p.innerHTML.normalize()} ;
 }
 
 function hidePopup() {
