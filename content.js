@@ -1113,7 +1113,7 @@ function pinyinAndZhuyin(syllables, showToneColors, pinyinClass) {
 }
 
 let miniHelp = `
-    <span style="font-weight: bold;">Zhongwen Chinese-English Dictionary</span><br><br>
+    <span style="font-weight: bold;">Huahua Chinese-English Dictionary</span><br><br>
     <p>Keyboard shortcuts:<p>
     <table style="margin: 10px;" cellspacing=5 cellpadding=5>
     <tr><td><b>n&nbsp;:</b></td><td>&nbsp;Next word</td></tr>

@@ -1,18 +1,12 @@
-# 中文 Zhongwen
+# 花花 Huahua
 
-[![Chrome Web Store Version](https://img.shields.io/chrome-web-store/v/kkmlkkjojmombglmlpbpapmhcaljjkde)](https://chrome.google.com/webstore/detail/zhongwen-chinese-english/kkmlkkjojmombglmlpbpapmhcaljjkde)
-[![Chrome Users](https://img.shields.io/chrome-web-store/users/kkmlkkjojmombglmlpbpapmhcaljjkde?label=chrome%20users)](https://chrome.google.com/webstore/detail/zhongwen-chinese-english/kkmlkkjojmombglmlpbpapmhcaljjkde)
-[![Mozilla Add-on Version](https://img.shields.io/amo/v/zhongwen)](https://addons.mozilla.org/en-US/firefox/addon/zhongwen/)
-[![Firefox Users](https://img.shields.io/amo/users/zhongwen?label=firefox%20users)](https://addons.mozilla.org/en-US/firefox/addon/zhongwen/)
+This is my fork of the [Zhongwen](https://github.com/cschiller/zhongwen) browser extension!
 
 ## A Chinese Pop-Up Dictionary and Learning Tool
 
 This browser extension allows you to translate Chinese characters and words
 by simply hovering over them with the mouse.  
 It also contains useful features for learners of the Chinese language.
-
-[![Chrome](https://storage.googleapis.com/chrome-gcs-uploader.appspot.com/image/WlD8wC6g8khYWPJUsQceQkhXSlv1/UV4C4ybeBTsZt43U4xis.png)](https://chrome.google.com/extensions/detail/kkmlkkjojmombglmlpbpapmhcaljjkde)
-[![Firefox](https://blog.mozilla.org/addons/files/2015/11/get-the-addon.png)](https://addons.mozilla.org/en-US/firefox/addon/zhongwen)
 
 
 ## Highlights
@@ -40,35 +34,30 @@ It also contains useful features for learners of the Chinese language.
 
 ## Installation
 
-### Chrome
-The Zhongwen Chrome extension is available via the Chrome Web Store:  
-https://chrome.google.com/extensions/detail/kkmlkkjojmombglmlpbpapmhcaljjkde
-
-Simply click on the "Add to Chrome" button to start the installation.
-
 
 ### Firefox
-The Zhongwen Firefox extension is available via the Firefox Add-Ons site:  
-https://addons.mozilla.org/en-US/firefox/addon/zhongwen
 
-Simply click on the "Add to Firefox" button to start the installation.
-
+```
+$ git checkout fun
+$ git archive --format=zip --output huahua.zip  fun
+```
+Install `huahua.zip` through firefox' addons page.
 
 ## How Does It Work?
-Once Zhongwen is installed on your computer you'll see a little icon showing
-the Zhongwen logo near the upper right-hand corner of your browser. By
+Once Huahua is installed on your computer you'll see a little icon showing
+the Huahua logo near the upper right-hand corner of your browser. By
 clicking on this icon you can turn the extension on and off. Click on it and
 wait until you see the word "On" displayed in red and white on top of the icon.
 This tells you that the dictionary is active. If you want to turn it off again,
 just click on the icon again and the red "On" label disappears. So with a
 single mouse-click you can activate or deactivate the dictionary.
 
-Once Zhongwen has been turned on, showing the red "On" label on the icon, you
+Once Huahua has been turned on, showing the red "On" label on the icon, you
 can go to a web page in Chinese and point your mouse at some Chinese characters.
 A pop-up window opens up automatically showing you the translation of the word
 you were pointing at.
 
-Zhongwen can translate both simplified characters as well as traditional
+Huahua can translate both simplified characters as well as traditional
 characters.
 
 
@@ -79,7 +68,7 @@ By default, the pop-up window shows the following pieces of information:
   the simplified and the traditional forms differ, then both forms are shown.
 - The corresponding Pinyin. The individual Pinyin syllables are shown in 
   different colors (see below).
-- The English translation. Sometimes, Zhongwen finds more than one matching 
+- The English translation. Sometimes, Huahua finds more than one matching 
   entry in its dictionary. In this case it shows you all of the matching 
   entries.
 
@@ -91,8 +80,8 @@ If you want to see Zhuyin, a.k.a.
 
 
 ## Chinese Grammar Wiki
-Zhongwen also allows you to learn more about Chinese grammar and usage. If
-Zhongwen knows that there's an entry at the Chinese Grammar Wiki for the entry
+Huahua also allows you to learn more about Chinese grammar and usage. If
+Huahua knows that there's an entry at the Chinese Grammar Wiki for the entry
 you're just looking at, it will show you the following text at the bottom
 of the pop-up window: 'Press "g" for grammar and usage notes.' If you then
 press <kbd>G</kbd> on your keyboard, a new tab will open in your browser and it 
@@ -100,7 +89,7 @@ will take you directly to the corresponding page in the Chinese Grammar Wiki.
 
 
 ## Why Is Pinyin Shown in Different Colors?
-If you're learning Chinese, Zhongwen helps you remember the tone of each
+If you're learning Chinese, Huahua helps you remember the tone of each
 character by displaying it in a different color. By default it uses the 
 following color scheme for showing Pinyin syllables:
 
@@ -111,9 +100,9 @@ following color scheme for showing Pinyin syllables:
 
 
 ## Keyboard Navigation
-Some users don't use Zhongwen to look up individual words, they want to read
+Some users don't use Huahua to look up individual words, they want to read
 an entire paragraph or article. In this case, rather than having to trace all
-the words with the mouse, you can use Zhongwen's built-in keyboard navigation
+the words with the mouse, you can use Huahua's built-in keyboard navigation
 support: You can move from character to character or from word to word by
 pressing keys on your keyboard:
 
@@ -131,11 +120,14 @@ pressing keys on your keyboard:
 ## Built-in Word List
 So now that you can look up all those words when reading Chinese web sites, wouldn't
 it be nice to add the new words you want to remember to some list that you can use for
-studying? Zhongwen let's you do that, too! It has a built- in word list feature. You just
+studying? Huahua let's you do that, too! It has a built- in word list feature. You just
 need to press <kbd>R</kbd> (short for "remember") on your keyboard and the entries you're looking
 at in the currently opened pop-up window will be added to the built-in word list. How
 do you get to see this list? It's easy, you need to use press the <kbd>Alt</kbd> and the <kbd>W</kbd> key
 on your keyboard (<kbd>Alt</kbd> + <kbd>W</kbd>). The word list will then open in a new tab.
+
+If you want to cherrypick one of many entries, press <kbd>P</kbd>, tick the boxes for the entries you want to save,
+and then press <kbd>P</kbd> again to save them.
 
 
 ## Can I export the dictionary entries into a spreadsheet or import them into Anki?
@@ -156,22 +148,22 @@ login page. After you're logged in, the word is automatically added to your stud
 
 
 ## Context Menu Items
-When Zhongwen is enabled, you can right-click on a page to open the browser's
-context menu. There will be a menu item for Zhongwen which you can use to access
+When Huahua is enabled, you can right-click on a page to open the browser's
+context menu. There will be a menu item for Huahua which you can use to access
 a new tab showing a helpful summary of all the keyboard shortcuts. Another
 menu item can be used for opening the word list as an alternative to the
 <kbd>Alt</kbd> + <kbd>W</kbd> keyboard shortcut.
 
 
 ## What Built-In Dictionary Does It Use?
-Zhongwen comes with a recent release of the CC-CEDICT dictionary. This dictionary is
-constantly updated, and each Zhongwen release will include an updated version of the
+Huahua comes with a recent release of the CC-CEDICT dictionary. This dictionary is
+constantly updated, and each Huahua release will include an updated version of the
 dictionary.
 
 
 ## Support for Online Dictionaries
 Sometimes, in addition to looking at the translation in the pop-up window, you might
-want to look up a word in one of the freely available online dictionaries. Zhongwen
+want to look up a word in one of the freely available online dictionaries. Huahua
 lets you quickly do that by some simple keyboard shortcuts.
 
 * <kbd>Alt</kbd> + <kbd>1</kbd> looks up the selected word using [LINE Dict](https://dict.naver.com/linedict/zhendict).
@@ -188,8 +180,8 @@ will be looked up in the corresponding online dictionary listed above.
 
 
 ## More Options
-Zhongwen also has an options page which allows you to configure certain aspects
-of its behavior. In order to get there just right-click on the Zhongwen logo
+Huahua also has an options page which allows you to configure certain aspects
+of its behavior. In order to get there just right-click on the Huahua logo
 in the upper right-hand corner of the browser and choose "Options". A new tab
 will open showing you all the available options with a brief explanation of
 each one.
@@ -212,4 +204,4 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 ---
 
-*Copyright (C) 2023 Christian Schiller*
+*Copyright (C) 2023 former POTUS Richard Nixon*

@@ -1,5 +1,11 @@
 /*
- Zhongwen - A Chinese-English Pop-Up Dictionary
+
+ Huahua Chinese popup dictonary.
+ https://www.github.com/ohnekopf
+
+ ---
+
+ Originally based on Zhongwen 5.14.1
  Copyright (C) 2010-2019 Christian Schiller
  https://chrome.google.com/extensions/detail/kkmlkkjojmombglmlpbpapmhcaljjkde
 
