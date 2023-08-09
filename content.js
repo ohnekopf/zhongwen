@@ -209,22 +209,15 @@ function onKeyDown(keyDown) {
 
         case 82: // 'r'
         {
-            let entries = [];
-            for (let j = 0; j < savedSearchResults.length; j++) {
-                let entry = {
-                    simplified: savedSearchResults[j][0],
-                    traditional: savedSearchResults[j][1],
-                    pinyin: savedSearchResults[j][2],
-                    definition: savedSearchResults[j][3]
-                };
-                entries.push(entry);
-            }
-
-            chrome.runtime.sendMessage({
-                'type': 'add',
-                'entries': entries
-            });
-
+			let entries;
+			if(config.saveToWordList === 'firstEntryOnly'){
+				entries=savedSearchResults.slice(0,1);
+			}
+			else{
+				entries=savedSearchResults;
+			}
+			saveEntries(entries);
+			
             showPopup('Added to word list.<p>Press Alt+W to open word list.', null, -1, -1);
         }
             break;
@@ -414,6 +407,25 @@ function onKeyDown(keyDown) {
         default:
             return;
     }
+}
+
+function saveEntries(entries){
+	let toStore = [];
+	
+	for ( let i = 0 ; i <entries.length ; i++ ){
+		let entry = {
+			simplified: entries[i][0],
+			traditional: entries[i][1],
+			pinyin: entries[i][2],
+			definition: entries[i][3]
+		};
+		toStore.push(entry);
+	}
+
+	chrome.runtime.sendMessage({
+		'type': 'add',
+		'entries': toStore
+	});
 }
 
 function onMouseMove(mouseMove) {
@@ -1222,23 +1234,13 @@ function savePicks(){
 	let any = false;
 	
 	for ( let i = 0 ; i <auxSearchResults.length ; i++ ){
-		let entry = {
-			simplified: auxSearchResults[i][0],
-			traditional: auxSearchResults[i][1],
-			pinyin: auxSearchResults[i][2],
-			definition: auxSearchResults[i][3]
-		};
 		if (inputs[i].checked){
-			entries.push(entry);
+			entries.push(auxSearchResults[i]);
 			any = true;
 		}
 	}
-
-	chrome.runtime.sendMessage({
-		'type': 'add',
-		'entries': entries
-	});
 	if (any){
+		saveEntries(entries);
 		showPopup('Some word were added to word list.<p>Press Alt+W to open word list.', null, -1, -1);
 	}
 	else{

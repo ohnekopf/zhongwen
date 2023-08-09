@@ -19,6 +19,7 @@ if (wordList) {
         e.timestamp = e.timestamp || 0;
         e.notes = (e.notes || '<i>Edit</i>');
         e.zhuyin = convert2Zhuyin(e.pinyin);
+        e.prettyPinyin = e.pinyin.normalize();
     });
     // show new entries first
     entries.sort((e1, e2) => e2.timestamp - e1.timestamp);
@@ -91,7 +92,7 @@ $(document).ready(function () {
             { data: 'id' },
             { data: 'simplified' },
             { data: 'traditional' },
-            { data: 'pinyin' },
+            { data: 'prettyPinyin' },
             { data: 'zhuyin', visible: showZhuyin },
             { data: 'definition' },
             { data: 'notes' },
