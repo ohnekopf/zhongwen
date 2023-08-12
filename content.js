@@ -83,7 +83,7 @@ let savedSelStartOffset = 0;
 let savedSelEndList = [];
 
 // regular expression for zero-width non-joiner U+200C &zwnj;
-let zwnj = /\u200c/g;
+let zwnj = /[\u200c\u200b]/g;
 
 
 // popup lock
