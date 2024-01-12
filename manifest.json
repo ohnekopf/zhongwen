@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Huahua: Chinese-English Dictionary",
   "short_name": "Huahua",
-  "version": "1.0",
+  "version": "1.1",
   "author": "Richard Nixon",
   "homepage_url": "https://github.com/ohnekopf/zhongwen",
   "description": "Great tool for learning Chinese. Includes links to Chinese Grammar Wiki. Supports adding words to Skritter.",
